@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "wrapper.h"
+#include "pcm_wrapper.h"
 #include "profile.h"
 
 int main()

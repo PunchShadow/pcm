@@ -19,10 +19,6 @@ extern "C" {
     void* tsx_init_ExtendedCustomCoreEventDescription(void);
     void print_conf(void*);
 
-
-    /* State related */
-    
-    
 #ifdef __cplusplus
 }
 #endif

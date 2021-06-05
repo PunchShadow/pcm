@@ -51,7 +51,7 @@ CXX=c++
 LIB= -lpthread -lc++
 endif
 
-COMMON_OBJS = msr.o cpucounters.o pci.o mmio.o client_bw.o utils.o topology.o dashboard.o debug.o threadpool.o resctrl.o
+COMMON_OBJS = msr.o cpucounters.o pci.o mmio.o client_bw.o utils.o topology.o dashboard.o debug.o threadpool.o resctrl.o pcm_wrapper.o
 EXE_OBJS = $(EXE:.x=.o)
 OBJS = $(COMMON_OBJS) $(EXE_OBJS)
 
