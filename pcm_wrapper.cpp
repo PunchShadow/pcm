@@ -57,6 +57,13 @@ void* PCM_getAllCounterStates(void* pcm)
 
 }
 
+void* PCM_getCoreCounterState(int core)
+{
+    CoreCounterState result;
+    if (MSR.size()) result.readAndAggregate(MSR[core]);
+    return result;
+}
+
 uint64_t PCM_getNumberofCustomEvents(void* BeforeState, void* AfterState, int nb_event, int num_cores)
 {
     // Cast to vector

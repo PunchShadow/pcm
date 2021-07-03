@@ -18,7 +18,7 @@ ifeq ($(UNAME), Linux)
 EXE += daemon-binaries
 endif
 
-CFLAGS += -Wall -g -O3 -Wno-unknown-pragmas -fPIC
+CFLAGS += -Wall -g -O3 -Wno-unknown-pragmas -fPIC -DPCM_SILENT
 CXXFLAGS += $(CFLAGS) -std=c++11
 
 # uncomment if your Linux kernel supports access to /dev/mem from user space
