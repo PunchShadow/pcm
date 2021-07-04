@@ -1990,6 +1990,13 @@ public:
     {
         return !isAtom();
     }
+public:
+
+    // PunchShadow: return msr for C-wrapper
+    std::vector<std::shared_ptr<SafeMsrHandle> > getMSR()
+    {
+        return MSR;
+    }
 
     ~PCM();
 };

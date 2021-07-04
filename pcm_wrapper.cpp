@@ -1,6 +1,6 @@
 #include "cpucounters.h"
 #include "pcm_wrapper.h"
-
+#include "msr.h"
 
 
 using namespace pcm;
@@ -57,11 +57,15 @@ void* PCM_getAllCounterStates(void* pcm)
 
 }
 
-void* PCM_getCoreCounterState(int core)
+void* PCM_getCoreCounterState(void* pcm, int core)
 {
-    CoreCounterState result;
-    if (MSR.size()) result.readAndAggregate(MSR[core]);
+
+    CoreCounterState *result = new CoreCounterState;
+    PCM *m = static_cast<PCM*>(pcm);
+    std::vector<std::shared_ptr<SafeMsrHandle> > MSR = m->getMSR();
+    if (MSR.size()) result->readAndAggregate(MSR[core]);
     return result;
+    
 }
 
 uint64_t PCM_getNumberofCustomEvents(void* BeforeState, void* AfterState, int nb_event, int num_cores)

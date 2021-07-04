@@ -9,12 +9,12 @@ extern "C" {
     void PCM_program(void*, void*);
     __uint32_t PCM_getNumCores(void*);
     void* PCM_getAllCounterStates(void*);
-    void* PCM_getCoreCounterState(int);
+    void* PCM_getCoreCounterState(void*, int);
     __uint64_t PCM_getNumberofCustomEvents(void*, void*, int, int);
     void PCM_delete(void*);
     void CoreState_delete(void*);
 
-
+    /* PCM internal */
     
     /* ExtendedCustomCoreEventDescription */
     void* tsx_init_ExtendedCustomCoreEventDescription(void);
